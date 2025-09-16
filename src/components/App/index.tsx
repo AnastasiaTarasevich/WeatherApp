@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <p>Main page test</p>
+      <p>Main page test 2</p>
     </>
   );
 }
