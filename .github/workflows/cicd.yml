@@ -43,7 +43,7 @@ jobs:
         with:
           node-version: 24.x   
       
-      - name: Install Netlify CLI
+      - name: Install Vercel CLI
         run: npm install -g vercel@latest  
       
       - name: Deploy to Vercel
