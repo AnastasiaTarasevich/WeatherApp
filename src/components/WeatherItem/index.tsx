@@ -5,7 +5,7 @@ import { StyledItem, WeatherImage } from './styled';
 export function WeatherItem() {
   return (
     <StyledItem>
-      <p>Sunday</p>
+      <p>Monday</p>
       <WeatherImage src={Cloud} />
       <p>2°</p>
     </StyledItem>
