@@ -1,5 +1,8 @@
-import { FETCH_LOCATION_FAILURE, FETCH_LOCATION_REQUEST, FETCH_LOCATION_SUCCESS } from "@constants/locationFetch";
-
+import {
+  FETCH_LOCATION_FAILURE,
+  FETCH_LOCATION_REQUEST,
+  FETCH_LOCATION_SUCCESS,
+} from '@constants/locationFetch';
 
 const initialState = {
   city: '',
