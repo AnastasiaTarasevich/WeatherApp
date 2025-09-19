@@ -6,7 +6,7 @@ import {
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 const OPENWEATHER_API = 'https://api.openweathermap.org/data/2.5/weather';
-const API_KEY = '102db943c7573345b4a8d7f3dddb5176';
+const API_KEY = 'd67f3851aea2328a65e3e25a293bb3aa';
 
 function* fetchLocationSaga() {
   try {
