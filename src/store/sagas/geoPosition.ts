@@ -21,7 +21,7 @@ function* fetchLocationSaga() {
     const data = yield call([res, res.json]);
 
     yield put(fetchLocationSuccess(data.name, coords.lat, coords.lon));
-  } catch (err) {
+  } catch {
     yield put(fetchLocationFailure('Error for geo'));
   }
 }
