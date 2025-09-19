@@ -1,5 +1,5 @@
+import { FETCH_LOCATION_REQUEST } from '@constants/locationFetch';
 import {
-  FETCH_LOCATION_REQUEST,
   fetchLocationFailure,
   fetchLocationSuccess,
 } from '@store/actions/geoPosition';
