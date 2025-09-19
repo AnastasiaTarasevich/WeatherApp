@@ -2,30 +2,25 @@ import { AuthButtons } from '@components/AuthButton';
 import { Button } from '@components/Buttons';
 import { TaskList } from '@components/TaskList';
 
-import {
-  MainWrapperList,
-  StyledButtons,
-  StyledDailyBtn,
-  StyledMobileButtons,
-} from './styled';
+import * as S from './styled';
 
 export function MainWrapper() {
   return (
     <>
-      <StyledButtons>
+      <S.StyledButtons>
         <AuthButtons />
-      </StyledButtons>
+      </S.StyledButtons>
 
-      <MainWrapperList>
+      <S.MainWrapperList>
         <TaskList />
-        <StyledDailyBtn>
+        <S.StyledDailyBtn>
           <Button>Daily</Button>
           <Button>Hourly</Button>
-        </StyledDailyBtn>
-        <StyledMobileButtons>
+        </S.StyledDailyBtn>
+        <S.StyledMobileButtons>
           <AuthButtons />
-        </StyledMobileButtons>
-      </MainWrapperList>
+        </S.StyledMobileButtons>
+      </S.MainWrapperList>
     </>
   );
 }

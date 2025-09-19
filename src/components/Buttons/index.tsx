@@ -1,5 +1,5 @@
-import { StyledButton } from './styled';
+import * as S from './styled';
 
 export function Button({ children }) {
-  return <StyledButton>{children}</StyledButton>;
+  return <S.StyledButton>{children}</S.StyledButton>;
 }

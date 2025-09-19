@@ -1,10 +1,10 @@
-import { Description, StyledItem, Time } from './styled';
+import * as S from './styled';
 
 export function Task() {
   return (
-    <StyledItem>
-      <Time>09:00</Time>
-      <Description>English class</Description>
-    </StyledItem>
+    <S.StyledItem>
+      <S.Time>09:00</S.Time>
+      <S.Description>English class</S.Description>
+    </S.StyledItem>
   );
 }
