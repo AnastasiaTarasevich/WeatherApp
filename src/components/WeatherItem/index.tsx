@@ -1,13 +1,13 @@
 import Cloud from '@assets/icons/cloudDefault.svg';
 
-import { StyledItem, WeatherImage } from './styled';
+import * as S from './styled';
 
 export function WeatherItem() {
   return (
-    <StyledItem>
+    <S.StyledItem>
       <p>Monday</p>
-      <WeatherImage src={Cloud} />
+      <S.WeatherImage src={Cloud} />
       <p>2°</p>
-    </StyledItem>
+    </S.StyledItem>
   );
 }

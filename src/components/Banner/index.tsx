@@ -2,29 +2,24 @@ import { MainWrapper } from '@components/MainWrapper';
 import { SearchBar } from '@components/SearchBar';
 import { WeatherList } from '@components/WeatherList';
 
-import {
-  BannerTitle,
-  StyledBanner,
-  StyledContainer,
-  StyledWrapper,
-} from './styled';
+import * as S from './styled';
 
 export function Banner() {
   return (
-    <StyledBanner>
-      <StyledContainer>
-        <StyledWrapper>
-          <BannerTitle>
+    <S.StyledBanner>
+      <S.StyledContainer>
+        <S.StyledWrapper>
+          <S.BannerTitle>
             12:20 PM
             <br />
             Monday, 2 February 2023
-          </BannerTitle>
+          </S.BannerTitle>
           <SearchBar />
-        </StyledWrapper>
+        </S.StyledWrapper>
         <MainWrapper />
-      </StyledContainer>
+      </S.StyledContainer>
 
       <WeatherList />
-    </StyledBanner>
+    </S.StyledBanner>
   );
 }

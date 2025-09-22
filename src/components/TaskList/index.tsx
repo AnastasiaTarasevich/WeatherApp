@@ -1,13 +1,13 @@
 import { Task } from '@components/Task';
 
-import { ListStyle } from './styled';
+import * as S from './styled';
 
 export function TaskList() {
   return (
-    <ListStyle>
+    <S.ListStyle>
       <Task />
       <Task />
       <Task />
-    </ListStyle>
+    </S.ListStyle>
   );
 }
