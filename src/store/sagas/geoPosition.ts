@@ -1,4 +1,4 @@
-import { IP_API, OPENWEATHER_API } from '@constants/api';
+import { OPENWEATHER_API } from '@constants/api';
 import { FETCH_LOCATION_REQUEST } from '@constants/locationFetch';
 import {
   fetchLocationFailure,
@@ -8,21 +8,29 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 
 const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
+function getCurrentPosition() {
+  return new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+}
+
 function* fetchLocationSaga() {
   try {
-    const ipRes = yield call(fetch, IP_API);
-    const ipData = yield call([ipRes, ipRes.json]);
-    const coords = { lat: ipData.latitude, lon: ipData.longitude };
+    const position= yield call(getCurrentPosition);
+    const coords = {
+      lat: position.coords.latitude,
+      lon: position.coords.longitude,
+    };
 
-    const res = yield call(
+    const res: Response = yield call(
       fetch,
       `${OPENWEATHER_API}?lat=${coords.lat}&lon=${coords.lon}&appid=${API_KEY}&units=metric&lang=ru`
     );
     const data = yield call([res, res.json]);
 
     yield put(fetchLocationSuccess(data.name, coords.lat, coords.lon));
-  } catch {
-    yield put(fetchLocationFailure('Error for geo'));
+  } catch (err) {
+    yield put(fetchLocationFailure(err.message));
   }
 }
 
