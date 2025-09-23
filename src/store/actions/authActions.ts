@@ -3,7 +3,7 @@ import {
   AUTH_SIGN_IN_SUCCESS,
 } from '@constants/authActionTypes';
 
-export const setEvents = (events: any[]) => ({
+export const setEvents = (events: []) => ({
   type: AUTH_SET_EVENTS,
   payload: events,
 });

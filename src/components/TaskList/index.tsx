@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@store/store';
 
 import { Task } from '@components/Task';
-
-import { formatDate } from '../../../utils/formatDate';
+import { formatDate } from '@utils/formatDate';
 
 export function TaskList() {
   const events = useSelector((state: RootState) => state.auth.events);
@@ -13,11 +12,11 @@ export function TaskList() {
 
   return (
     <ul>
-      {events.map((event: any) => (
+      {events.map(({ id, start, summary }) => (
         <Task
-          key={event.id}
-          time={formatDate(event.start.dateTime || event.start.date)}
-          description={event.summary || 'No description'}
+          key={id}
+          time={formatDate(start.dateTime || start.date)}
+          description={summary || 'No description'}
         />
       ))}
     </ul>

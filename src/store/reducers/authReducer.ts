@@ -1,7 +1,12 @@
 import { AUTH_SET_EVENTS } from '@constants/authActionTypes';
 
 export interface AuthState {
-  events: any[];
+  events: {
+    id: string;
+    summary: string;
+    start: { dateTime?: string; date?: string };
+    end: { dateTime?: string; date?: string };
+  }[];
 }
 
 const initialState: AuthState = {

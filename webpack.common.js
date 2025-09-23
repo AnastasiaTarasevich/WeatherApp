@@ -21,6 +21,7 @@ module.exports = {
       '@store': path.resolve(__dirname, 'src/store/'),
       '@assets':path.resolve(__dirname,'src/assets/'),
       '@constants':path.resolve(__dirname, 'src/constants/'),
+      '@googleApiConfig': path.resolve(__dirname, 'googleApiConfig.ts'),
     },
   },
   module: {

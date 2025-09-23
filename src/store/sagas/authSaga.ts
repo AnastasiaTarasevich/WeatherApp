@@ -1,11 +1,16 @@
 import ApiCalendar from 'react-google-calendar-api';
 
+import googleConfig from '@googleApiConfig';
 import { setEvents, signInSuccess } from '@store/actions/authActions';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
-import googleConfig from '../../../googleApiConfig';
-
-const apiCalendar = new ApiCalendar(googleConfig) as any;
+interface IApiCalendar {
+  sign: boolean;
+  listUpcomingEvents(maxResults?: number): Promise<{ result: { items: [] } }>;
+  handleAuthClick(): void;
+  handleSignoutClick(): void;
+}
+const apiCalendar: IApiCalendar = new ApiCalendar(googleConfig);
 
 function* loadEventsSaga() {
   try {
