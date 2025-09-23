@@ -1,0 +1,2 @@
+export const AUTH_SET_EVENTS = 'AUTH/SET_EVENTS';
+export const AUTH_SIGN_IN_SUCCESS = 'AUTH/SIGN_IN_SUCCESS';

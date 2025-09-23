@@ -1,3 +1,4 @@
+import { IP_API, OPENWEATHER_API } from '@constants/api';
 import { FETCH_LOCATION_REQUEST } from '@constants/locationFetch';
 import {
   fetchLocationFailure,
@@ -5,12 +6,11 @@ import {
 } from '@store/actions/geoPosition';
 import { call, put, takeLatest } from 'redux-saga/effects';
 
-const OPENWEATHER_API = 'https://api.openweathermap.org/data/2.5/weather';
 const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
 function* fetchLocationSaga() {
   try {
-    const ipRes = yield call(fetch, 'https://ipapi.co/json/');
+    const ipRes = yield call(fetch, IP_API);
     const ipData = yield call([ipRes, ipRes.json]);
     const coords = { lat: ipData.latitude, lon: ipData.longitude };
 
