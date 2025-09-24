@@ -1,10 +1,15 @@
 import * as S from './styled';
 
-export function Task() {
+interface TaskProps {
+  time: string;
+  description: string;
+}
+
+export function Task({ time, description }: TaskProps) {
   return (
     <S.StyledItem>
-      <S.Time>09:00</S.Time>
-      <S.Description>English class</S.Description>
+      <S.Time>{time}</S.Time>
+      <S.Description>{description}</S.Description>
     </S.StyledItem>
   );
 }

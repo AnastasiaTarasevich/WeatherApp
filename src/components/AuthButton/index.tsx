@@ -1,10 +1,17 @@
+import { useAuth } from 'hook/useAuth';
+
 import { Button } from '@components/Buttons';
 
 export function AuthButtons() {
+  const { isSignedIn, signIn, signOut } = useAuth();
+
   return (
-    <>
-      <Button>Sign In</Button>
-      <Button>Sign Up</Button>
-    </>
+    <div>
+      {!isSignedIn ? (
+        <Button onClick={signIn}>Sign In</Button>
+      ) : (
+        <Button onClick={signOut}>Sign Out</Button>
+      )}
+    </div>
   );
 }

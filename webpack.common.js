@@ -2,16 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const webpack = require('webpack');
-const dotenv = require('dotenv');
-
-const env = dotenv.config().parsed;
-
-const envKeys = env
-  ? Object.keys(env).reduce((prev, next) => {
-      prev[`process.env.${next}`] = JSON.stringify(env[next]);
-      return prev;
-    }, {})
-  : {};
 
 module.exports = {
   entry: './src/index.tsx',
@@ -31,6 +21,7 @@ module.exports = {
       '@store': path.resolve(__dirname, 'src/store/'),
       '@assets':path.resolve(__dirname,'src/assets/'),
       '@constants':path.resolve(__dirname, 'src/constants/'),
+      '@googleApiConfig': path.resolve(__dirname, 'googleApiConfig.ts'),
     },
   },
   module: {
@@ -67,6 +58,10 @@ module.exports = {
       template: path.resolve(__dirname, 'index.html'),
       favicon: 'src/assets/icons/icon.svg',
     }),
-    new webpack.DefinePlugin(envKeys), 
+    new webpack.DefinePlugin({
+    'process.env.REACT_APP_OPENWEATHER_API_KEY': JSON.stringify(process.env.REACT_APP_OPENWEATHER_API_KEY),
+    'process.env.REACT_APP_GOOGLE_CLIENT_ID': JSON.stringify(process.env.REACT_APP_GOOGLE_CLIENT_ID),
+    'process.env.REACT_APP_GOOGLE_API_KEY': JSON.stringify(process.env.REACT_APP_GOOGLE_API_KEY),
+  }),
   ],
 };

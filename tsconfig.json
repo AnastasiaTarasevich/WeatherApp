@@ -11,6 +11,7 @@
       "@assets/*":["assets/*"],
       "@store/*": ["store/*"],
       "@constants/*": ["constants/*"],
+      "@googleApiConfig": ["../googleApiConfig.ts"],
     }
   },
 }
