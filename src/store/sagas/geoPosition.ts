@@ -16,7 +16,7 @@ function getCurrentPosition() {
 
 function* fetchLocationSaga() {
   try {
-    const position= yield call(getCurrentPosition);
+    const position = yield call(getCurrentPosition);
     const coords = {
       lat: position.coords.latitude,
       lon: position.coords.longitude,

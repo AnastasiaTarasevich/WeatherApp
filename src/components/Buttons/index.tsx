@@ -1,12 +1,11 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
 import * as S from './styled';
 
 interface ButtonProps {
-  children: React.ReactNode;
+  children: ReactNode;
   onClick?: () => void;
 }
-
-export const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
-  return <S.StyledButton onClick={onClick}>{children}</S.StyledButton>;
-};
+export function Button({ children }: ButtonProps) {
+  return <S.StyledButton>{children}</S.StyledButton>;
+}
